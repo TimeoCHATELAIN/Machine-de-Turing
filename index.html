@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr" class="h-full w-full fallout-text scanline-effect">
+<head>
+    <meta charset="utf-8">
+    <title>Chatelain Timéo - Machine de Turing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<header>
+    <div class="marquee-container">
+        <div class="marquee-text">
+            <span>Élu meilleur simulateur de machine de Turing 2019-2022-2023-2024 | </span>
+            <span>100% fonctionnel | </span>
+            <span>100% gratuit | </span>
+            <span>100% open-source | </span>
+            <span>Profiter de 20% sur notre simulateur Deep Blue avec le code JEDONNE20/20ATIMEOCHATELAIN | </span>
+            <span>Élu meilleur simulateur de machine de Turing 2019-2022-2023-2024 | </span>
+            <span>100% fonctionnel | </span>
+            <span>100% gratuit | </span>
+            <span>100% open-source | </span>
+            <span>Profiter de 20% sur notre simulateur Deep Blue avec le code JEDONNE20/20ATIMEOCHATELAIN | </span>
+        </div>
+    </div>
+</header>
+
+<body class="h-full w-full bg-[#202020]">
+    <div class="flex flex-col lg:flex-row p-16 pt-24 h-full w-full bg-[#202020] justify-between overflow-auto">
+        <div>
+            <h1 class="text-4xl font-bold mb-4">Visualisation de Machine de Turing</h1>
+            <input type="file" id="file" accept=".mt" class="contour"/>
+
+            <p class="p-4 pl-0"> Mot à verifier : 
+                <input type="text" id="ruban"/>
+                <button id="aply">
+                    Insérer
+                </button>
+            </p>
+        
+            <div class="contour">
+                <div id="step-counter" class="text-lg font-semibold">Etape : 0</div>
+                <div>
+                    <p id="etat-courant">État courant :</p>
+                    <p id="position-tete-lecture">Position de la tête de lecture : 0</p>
+                    <p id="resultat">Ruban : </p>
+                </div>
+                <div class="flex w-full gap-4"> 
+                    <button id="play">Lancer</button>
+                    <button id="pause" class="hidden">Stopper</button>
+                    <button id="step">Pas à pas</button>
+                </div>
+            </div>
+
+            <div id="historique" class="pt-4 pb-16">
+                <h2 class="text-2xl font-bold">Historique</h2>
+                <div id="historique-list"></div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <table id="transition-table" class="w-full">
+                    <thead></thead>
+                </table>
+            </div>
+
+            <div class="flex justify-between w-full">
+                <p id="etat-initial"></p>
+                <p id="etats-finaux"></p>
+                <p id="blanksymbol"></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+

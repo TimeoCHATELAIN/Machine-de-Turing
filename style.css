@@ -1,0 +1,193 @@
+:root {
+    --main-color: #ffa500;
+    --main-transparency: #ffa60050;
+    --vert: #1aff00;
+    --vert-transparency: #1aff0050;
+    --orange: #ffa500;
+    --orange-transparency: #ffa50050;
+    --rouge: #ff0000;
+    --rouge-transparency: #ff000050;
+}
+
+/* effet fallout */
+
+@keyframes fallout {
+    0% {
+        text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    }
+    50% {
+        text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    }
+}
+
+/* effet fallout box*/
+
+@keyframes fallout-box {
+    0% {
+        box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    }
+    50% {
+        box-shadow: inset 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+    }
+    100% {
+        box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    }
+}
+
+th{
+    background-color: var(--main-color);
+    border: var(--main-color) 1px solid;
+    color: #202020;
+    padding: 10px;
+    box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    animation: fallout-box  6s infinite;
+}
+
+td{
+    border: var(--main-color) 1px solid;
+    color: var(--main-color);
+    padding: 10px;
+    box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    animation: fallout-box  6s infinite;
+}
+
+
+.marquee-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--main-color);
+    color: #202020;
+    padding: 10px 0;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    animation: fallout 6s infinite;
+}
+
+/* Le texte qui défile */
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+
+/* Animation pour faire défiler */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } 
+  }
+
+.fallout-text {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--main-color);
+    text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    animation: fallout 6s infinite;
+    
+    box-shadow: inset 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+@keyframes scanline {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+.scanline-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.scanline-effect::before {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.35) 50%);
+    background-size: 100% 4px;
+    filter: blur(1.2px);
+    animation: scanline 2ms infinite linear;
+    pointer-events: none;
+
+    box-shadow:  inset 0 0 50px 0 var(--main-transparency);
+}
+
+.contour{
+    border: var(--main-color) 1px solid;
+    padding: 16px;
+    box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+    animation: fallout-box  6s infinite;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#ruban{
+    background: #00000000;
+    border-bottom: 1px solid var(--main-color);
+    color: var(--main-color);
+    text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+}
+
+.highlight {
+    background-color: var(--main-color);
+    font-weight: bold;
+    padding: 2px;
+    color: #202020;
+    box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+
+}
+
+button{
+    padding: 1px 10px !important;
+    text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color) !important;
+    animation: fallout 6s infinite !important;
+    border: solid var(--main-color) 1px !important;
+    box-shadow: inset 0 0 5px var(--main-color), 0 0 10px var(--main-color) !important;
+}
+
+button:hover{
+    background: var(--main-transparency);
+}
+
+button:active{
+    background: var(--main-color);
+    color: #202020;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    box-shadow:  0 0 5px var(--main-color), 0 0 10px var(--main-color);
+
+}
+
+::-webkit-scrollbar-track {
+    background: #202020; 
+    border: 1px solid var(--main-color);
+    box-shadow:  0 0 5px var(--main-color), 0 0 10px var(--main-color);
+
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); /* color of the scroll thumb */
+    box-shadow:  0 0 5px var(--main-color), 0 0 10px var(--main-color);
+
+}
+
+/* body{
+    overflow: auto;
+    min-height: 100%;
+    height: fit-content;
+} */
